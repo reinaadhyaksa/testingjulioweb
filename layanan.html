@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layanan - Dua Alam Project</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .service-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1582407947304-fd86f028f716?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1096&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .process-step {
+            position: relative;
+        }
+
+        .process-step:not(:last-child):after {
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: 50%;
+            width: 2px;
+            height: 60px;
+            background-color: #e5e7eb;
+            transform: translateX(-50%);
+        }
+
+        @media (min-width: 768px) {
+            .process-step:not(:last-child):after {
+                top: 50%;
+                left: 100%;
+                width: 60px;
+                height: 2px;
+                transform: translateY(-50%);
+            }
+        }
+
+        /* Mobile menu styles */
+        .mobile-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background-color: white;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            z-index: 40;
+        }
+
+        .mobile-menu.active {
+            display: block;
+        }
+
+        .mobile-menu a {
+            display: block;
+            padding: 12px 20px;
+            border-bottom: 1px solid #f3f4f6;
+        }
+
+        .mobile-menu a:last-child {
+            border-bottom: none;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50">
+    <!-- Header & Navigation -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4 sm:px-6 py-3 sm:py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <a href="index.html" class="flex items-center">
+                        <div
+                            class="w-8 h-8 sm:w-10 sm:h-10 bg-amber-600 rounded-lg flex items-center justify-center mr-2 sm:mr-3">
+                            <span class="text-white font-bold text-sm sm:text-lg">DA</span>
+                        </div>
+                        <h1 class="text-lg sm:text-xl font-bold text-gray-800">Dua Alam Project</h1>
+                    </a>
+                </div>
+
+                <nav class="hidden md:flex space-x-6 lg:space-x-8">
+                    <a href="index.html" class="text-gray-600 hover:text-amber-600 transition text-base">Beranda</a>
+                    <a href="layanan.html" class="text-amber-600 font-medium text-base">Layanan</a>
+                    <a href="proyek.html" class="text-gray-600 hover:text-amber-600 transition text-base">Proyek</a>
+                    <a href="tentang-kami.html" class="text-gray-600 hover:text-amber-600 transition text-base">Tentang
+                        Kami</a>
+                    <a href="kontak.html" class="text-gray-600 hover:text-amber-600 transition text-base">Kontak</a>
+                </nav>
+
+                <button
+                    class="hidden sm:block bg-amber-600 text-white px-4 py-2 rounded-lg hover:bg-amber-700 transition text-sm sm:text-base">
+                    Konsultasi Gratis
+                </button>
+
+                <button id="mobile-menu-button" class="md:hidden text-gray-600">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="mobile-menu md:hidden">
+                <a href="index.html" class="text-gray-600 hover:text-amber-600 transition">Beranda</a>
+                <a href="layanan.html" class="text-amber-600 font-medium">Layanan</a>
+                <a href="proyek.html" class="text-gray-600 hover:text-amber-600 transition">Proyek</a>
+                <a href="tentang-kami.html" class="text-gray-600 hover:text-amber-600 transition">Tentang Kami</a>
+                <a href="kontak.html" class="text-gray-600 hover:text-amber-600 transition">Kontak</a>
+                <a href="#" class="bg-amber-600 text-white text-center py-3 font-medium hover:bg-amber-700 transition">
+                    Konsultasi Gratis
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="service-hero text-white py-16 md:py-20 lg:py-24">
+        <div class="container mx-auto px-4 sm:px-6 text-center">
+            <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6">Layanan Profesional Kami
+            </h1>
+            <p class="text-base sm:text-lg md:text-xl max-w-3xl mx-auto">Solusi lengkap untuk semua kebutuhan properti
+                Anda, dari perencanaan
+                hingga realisasi dengan hasil terbaik.</p>
+        </div>
+    </section>
+
+    <!-- Services Overview -->
+    <section class="py-12 sm:py-16 bg-white">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="text-center mb-10 sm:mb-12">
+                <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-4">Layanan Unggulan Kami</h2>
+                <p class="text-gray-600 text-base sm:text-lg max-w-2xl mx-auto">Dengan pengalaman dan keahlian tim yang
+                    mumpuni, kami siap
+                    membantu mewujudkan properti impian Anda.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+                <div class="bg-amber-50 p-6 sm:p-8 rounded-xl border-l-4 border-amber-600">
+                    <div
+                        class="w-12 h-12 sm:w-16 sm:h-16 bg-amber-600 rounded-lg flex items-center justify-center mb-4 sm:mb-6">
+                        <i class="fas fa-home text-white text-lg sm:text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-semibold text-gray-800 mb-3 sm:mb-4">Jasa Penjualan & Pemasaran
+                        Properti</h3>
+                    <p class="text-gray-600 text-sm sm:text-base mb-4">Kami menawarkan strategi pemasaran yang efektif
+                        untuk menjual properti
+                        Anda dengan harga terbaik dalam waktu optimal.</p>
+                    <a href="#jual-beli" class="text-amber-600 font-medium flex items-center text-sm sm:text-base">
+                        Pelajari lebih lanjut <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+
+                <div class="bg-amber-50 p-6 sm:p-8 rounded-xl border-l-4 border-amber-600">
+                    <div
+                        class="w-12 h-12 sm:w-16 sm:h-16 bg-amber-600 rounded-lg flex items-center justify-center mb-4 sm:mb-6">
+                        <i class="fas fa-tools text-white text-lg sm:text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-semibold text-gray-800 mb-3 sm:mb-4">Jasa Pembangunan & Renovasi
+                    </h3>
+                    <p class="text-gray-600 text-sm sm:text-base mb-4">Transformasi properti Anda dengan desain modern
+                        dan fungsional,
+                        dikerjakan oleh tim ahli dengan material berkualitas.</p>
+                    <a href="#pembangunan" class="text-amber-600 font-medium flex items-center text-sm sm:text-base">
+                        Pelajari lebih lanjut <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+
+                <div class="bg-amber-50 p-6 sm:p-8 rounded-xl border-l-4 border-amber-600">
+                    <div
+                        class="w-12 h-12 sm:w-16 sm:h-16 bg-amber-600 rounded-lg flex items-center justify-center mb-4 sm:mb-6">
+                        <i class="fas fa-chart-line text-white text-lg sm:text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-semibold text-gray-800 mb-3 sm:mb-4">Konsultasi & Manajemen
+                        Properti</h3>
+                    <p class="text-gray-600 text-sm sm:text-base mb-4">Dapatkan saran profesional untuk meningkatkan
+                        nilai properti dan
+                        kelola aset Anda dengan pendekatan strategis.</p>
+                    <a href="#konsultasi" class="text-amber-600 font-medium flex items-center text-sm sm:text-base">
+                        Pelajari lebih lanjut <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service 1: Jual Beli Properti -->
+    <section id="jual-beli" class="py-12 sm:py-16 bg-gray-50">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="flex flex-col md:flex-row items-center gap-8 sm:gap-12">
+                <div class="md:w-1/2">
+                    <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-4 sm:mb-6">Jasa Penjualan & Pemasaran
+                        Properti</h2>
+                    <p class="text-gray-600 text-base sm:text-lg mb-4 sm:mb-6">Kami memiliki strategi pemasaran yang
+                        komprehensif untuk memastikan
+                        properti Anda terjual dengan harga terbaik dan dalam waktu yang optimal.</p>
+
+                    <div class="space-y-3 sm:space-y-4 mb-6 sm:mb-8">
+                        <div class="flex items-start">
+                            <i class="fas fa-check text-amber-600 mt-1 mr-3"></i>
+                            <p class="text-gray-700 text-sm sm:text-base">Analisis pasar dan penentuan harga strategis
+                            </p>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check text-amber-600 mt-1 mr-3"></i>
+                            <p class="text-gray-700 text-sm sm:text-base">Pemasaran multichannel (online & offline)</p>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check text-amber-600 mt-1 mr-3"></i>
+                            <p class="text-gray-700 text-sm sm:text-base">Negosiasi dengan calon pembeli</p>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check text-amber-600 mt-1 mr-3"></i>
+                            <p class="text-gray-700 text-sm sm:text-base">Pendampingan proses legalitas hingga akad</p>
+                        </div>
+                    </div>
+
+                    <button
+                        class="bg-amber-600 text-white px-5 py-3 sm:px-6 sm:py-3 rounded-lg font-medium hover:bg-amber-700 transition text-sm sm:text-base">
+                        Konsultasi Penjualan Properti
+                    </button>
+                </div>
+
+                <div class="md:w-1/2">
+                    <div class="bg-white p-5 sm:p-6 rounded-xl shadow-md">
+                        <h3 class="text-lg sm:text-xl font-semibold text-gray-800 mb-4">Properti yang Kami Tangani</h3>
+                        <div class="grid grid-cols-2 gap-3 sm:gap-4">
+                            <div class="flex items-center p-3 sm:p-4 bg-amber-50 rounded-lg">
+                                <i class="fas fa-house-user text-amber-600 mr-2 sm:mr-3 text-sm sm:text-base"></i>
+                                <span class="text-sm sm:text-base">Rumah</span>
+                            </div>
+                            <div class="flex items-center p-3 sm:p-4 bg-amber-50 rounded-lg">
+                                <i class="fas fa-building text-amber-600 mr-2 sm:mr-3 text-sm sm:text-base"></i>
+                                <span class="text-sm sm:text-base">Ruko</span>
+                            </div>
+                            <div class="flex items-center p-3 sm:p-4 bg-amber-50 rounded-lg">
+                                <i class="fas fa-vector-square text-amber-600 mr-2 sm:mr-3 text-sm sm:text-base"></i>
+                                <span class="text-sm sm:text-base">Tanah</span>
+                            </div>
+                            <div class="flex items-center p-3 sm:p-4 bg-amber-50 rounded-lg">
+                                <i class="fas fa-city text-amber-600 mr-2 sm:mr-3 text-sm sm:text-base"></i>
+                                <span class="text-sm sm:text-base">Apartemen</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service 2: Pembangunan & Renovasi -->
+    <section id="pembangunan" class="py-12 sm:py-16 bg-white">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="flex flex-col md:flex-row-reverse items-center gap-8 sm:gap-12">
+                <div class="md:w-1/2">
+                    <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-4 sm:mb-6">Jasa Pembangunan & Renovasi
+                    </h2>
+                    <p class="text-gray-600 text-base sm:text-lg mb-4 sm:mb-6">Dari konsep hingga realisasi, kami
+                        menghadirkan hunian yang tidak
+                        hanya indah tetapi juga fungsional dengan kualitas terjamin.</p>
+
+                    <div class="space-y-3 sm:space-y-4 mb-6 sm:mb-8">
+                        <div class="flex items-start">
+                            <i class="fas fa-check text-amber-600 mt-1 mr-3"></i>
+                            <p class="text-gray-700 text-sm sm:text-base">Konsultasi desain dan perencanaan anggaran</p>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check text-amber-600 mt-1 mr-3"></i>
+                            <p class="text-gray-700 text-sm sm:text-base">Pembangunan dari nol atau renovasi total</p>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check text-amber-600 mt-1 mr-3"></i>
+                            <p class="text-gray-700 text-sm sm:text-base">Pengawasan ketat kualitas material dan
+                                pengerjaan</p>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check text-amber-600 mt-1 mr-3"></i>
+                            <p class="text-gray-700 text-sm sm:text-base">Penyerahan kunci dengan garansi purna jual</p>
+                        </div>
+                    </div>
+
+                    <button
+                        class="bg-amber-600 text-white px-5 py-3 sm:px-6 sm:py-3 rounded-lg font-medium hover:bg-amber-700 transition text-sm sm:text-base">
+                        Konsultasi Pembangunan
+                    </button>
+                </div>
+
+                <div class="md:w-1/2">
+                    <div class="bg-gray-800 text-white p-6 sm:p-8 rounded-xl">
+                        <h3 class="text-lg sm:text-xl font-semibold mb-4">Proses Pengerjaan Kami</h3>
+                        <div class="space-y-4 sm:space-y-6">
+                            <div class="flex items-start">
+                                <div
+                                    class="w-7 h-7 sm:w-8 sm:h-8 bg-amber-600 rounded-full flex items-center justify-center mr-3 sm:mr-4 flex-shrink-0 text-sm">
+                                    1</div>
+                                <div>
+                                    <h4 class="font-medium mb-1 text-sm sm:text-base">Konsultasi & Perencanaan</h4>
+                                    <p class="text-gray-300 text-xs sm:text-sm">Diskusi kebutuhan, survei lokasi, dan
+                                        penyusunan
+                                        RAB</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div
+                                    class="w-7 h-7 sm:w-8 sm:h-8 bg-amber-600 rounded-full flex items-center justify-center mr-3 sm:mr-4 flex-shrink-0 text-sm">
+                                    2</div>
+                                <div>
+                                    <h4 class="font-medium mb-1 text-sm sm:text-base">Desain & Persetujuan</h4>
+                                    <p class="text-gray-300 text-xs sm:text-sm">Pembuatan desain konsep dan revisi
+                                        hingga disetujui
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div
+                                    class="w-7 h-7 sm:w-8 sm:h-8 bg-amber-600 rounded-full flex items-center justify-center mr-3 sm:mr-4 flex-shrink-0 text-sm">
+                                    3</div>
+                                <div>
+                                    <h4 class="font-medium mb-1 text-sm sm:text-base">Pelaksanaan</h4>
+                                    <p class="text-gray-300 text-xs sm:text-sm">Pengerjaan konstruksi dengan pengawasan
+                                        ketat</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div
+                                    class="w-7 h-7 sm:w-8 sm:h-8 bg-amber-600 rounded-full flex items-center justify-center mr-3 sm:mr-4 flex-shrink-0 text-sm">
+                                    4</div>
+                                <div>
+                                    <h4 class="font-medium mb-1 text-sm sm:text-base">Penyerahan & Garansi</h4>
+                                    <p class="text-gray-300 text-xs sm:text-sm">Penyerahan properti dengan garansi purna
+                                        jual</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service 3: Konsultasi & Manajemen -->
+    <section id="konsultasi" class="py-12 sm:py-16 bg-gray-50">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="flex flex-col md:flex-row items-center gap-8 sm:gap-12">
+                <div class="md:w-1/2">
+                    <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-4 sm:mb-6">Konsultasi & Manajemen
+                        Properti</h2>
+                    <p class="text-gray-600 text-base sm:text-lg mb-4 sm:mb-6">Tingkatkan nilai investasi properti Anda
+                        dengan saran profesional dan
+                        manajemen yang efektif untuk hasil optimal jangka panjang.</p>
+
+                    <div class="space-y-3 sm:space-y-4 mb-6 sm:mb-8">
+                        <div class="flex items-start">
+                            <i class="fas fa-check text-amber-600 mt-1 mr-3"></i>
+                            <p class="text-gray-700 text-sm sm:text-base">Analisis potensi investasi properti</p>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check text-amber-600 mt-1 mr-3"></i>
+                            <p class="text-gray-700 text-sm sm:text-base">Strategi peningkatan nilai properti</p>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check text-amber-600 mt-1 mr-3"></i>
+                            <p class="text-gray-700 text-sm sm:text-base">Manajemen properti sewaan</p>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check text-amber-600 mt-1 mr-3"></i>
+                            <p class="text-gray-700 text-sm sm:text-base">Laporan perkembangan investasi berkala</p>
+                        </div>
+                    </div>
+
+                    <button
+                        class="bg-amber-600 text-white px-5 py-3 sm:px-6 sm:py-3 rounded-lg font-medium hover:bg-amber-700 transition text-sm sm:text-base">
+                        Konsultasi Investasi
+                    </button>
+                </div>
+
+                <div class="md:w-1/2">
+                    <div class="bg-white p-6 sm:p-8 rounded-xl shadow-md">
+                        <h3 class="text-lg sm:text-xl font-semibold text-gray-800 mb-4 sm:mb-6 text-center">Paket
+                            Layanan Konsultasi</h3>
+                        <div class="space-y-4 sm:space-y-6">
+                            <div class="border border-gray-200 rounded-lg p-4 sm:p-6 hover:border-amber-500 transition">
+                                <h4 class="font-semibold text-base sm:text-lg text-gray-800 mb-2">Paket Dasar</h4>
+                                <p class="text-gray-600 text-sm sm:text-base mb-3 sm:mb-4">Analisis properti dan
+                                    rekomendasi strategi peningkatan
+                                    nilai</p>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-amber-600 font-bold text-sm sm:text-base">Rp 1.500.000</span>
+                                    <button class="text-amber-600 font-medium text-xs sm:text-sm">Pilih Paket</button>
+                                </div>
+                            </div>
+
+                            <div class="border-2 border-amber-500 rounded-lg p-4 sm:p-6 bg-amber-50">
+                                <div class="flex justify-between items-start mb-2">
+                                    <h4 class="font-semibold text-base sm:text-lg text-gray-800">Paket Profesional</h4>
+                                    <span class="bg-amber-600 text-white text-xs px-2 py-1 rounded">Rekomendasi</span>
+                                </div>
+                                <p class="text-gray-600 text-sm sm:text-base mb-3 sm:mb-4">Konsultasi lengkap +
+                                    pendampingan implementasi strategi 3
+                                    bulan</p>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-amber-600 font-bold text-sm sm:text-base">Rp 5.000.000</span>
+                                    <button
+                                        class="bg-amber-600 text-white px-3 py-1 sm:px-4 sm:py-2 rounded text-xs sm:text-sm font-medium">Pilih
+                                        Paket</button>
+                                </div>
+                            </div>
+
+                            <div class="border border-gray-200 rounded-lg p-4 sm:p-6 hover:border-amber-500 transition">
+                                <h4 class="font-semibold text-base sm:text-lg text-gray-800 mb-2">Paket Enterprise</h4>
+                                <p class="text-gray-600 text-sm sm:text-base mb-3 sm:mb-4">Manajemen properti lengkap +
+                                    laporan perkembangan
+                                    investasi</p>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-amber-600 font-bold text-sm sm:text-base">Custom</span>
+                                    <button class="text-amber-600 font-medium text-xs sm:text-sm">Hubungi Kami</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="py-12 sm:py-16 bg-white">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="text-center mb-10 sm:mb-12">
+                <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-4">Proses Kerja Kami</h2>
+                <p class="text-gray-600 text-base sm:text-lg max-w-2xl mx-auto">Kami mengedepankan transparansi dan
+                    komunikasi dalam setiap
+                    tahap pengerjaan untuk memastikan kepuasan Anda.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6 sm:gap-8">
+                <div class="process-step text-center">
+                    <div
+                        class="w-14 h-14 sm:w-16 sm:h-16 bg-amber-600 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                        <i class="fas fa-comments text-white text-lg sm:text-xl"></i>
+                    </div>
+                    <h3 class="text-base sm:text-lg font-semibold text-gray-800 mb-2">Konsultasi Awal</h3>
+                    <p class="text-gray-600 text-sm sm:text-base">Diskusi kebutuhan dan ekspektasi Anda untuk memahami
+                        tujuan proyek</p>
+                </div>
+
+                <div class="process-step text-center">
+                    <div
+                        class="w-14 h-14 sm:w-16 sm:h-16 bg-amber-600 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                        <i class="fas fa-pencil-ruler text-white text-lg sm:text-xl"></i>
+                    </div>
+                    <h3 class="text-base sm:text-lg font-semibold text-gray-800 mb-2">Perencanaan & Desain</h3>
+                    <p class="text-gray-600 text-sm sm:text-base">Penyusunan konsep, desain, dan anggaran yang
+                        disesuaikan dengan kebutuhan
+                    </p>
+                </div>
+
+                <div class="process-step text-center">
+                    <div
+                        class="w-14 h-14 sm:w-16 sm:h-16 bg-amber-600 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                        <i class="fas fa-hammer text-white text-lg sm:text-xl"></i>
+                    </div>
+                    <h3 class="text-base sm:text-lg font-semibold text-gray-800 mb-2">Eksekusi</h3>
+                    <p class="text-gray-600 text-sm sm:text-base">Pelaksanaan proyek dengan pengawasan ketat untuk
+                        memastikan kualitas</p>
+                </div>
+
+                <div class="process-step text-center">
+                    <div
+                        class="w-14 h-14 sm:w-16 sm:h-16 bg-amber-600 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                        <i class="fas fa-handshake text-white text-lg sm:text-xl"></i>
+                    </div>
+                    <h3 class="text-base sm:text-lg font-semibold text-gray-800 mb-2">Penyerahan</h3>
+                    <p class="text-gray-600 text-sm sm:text-base">Penyerahan hasil akhir dengan garansi dan dukungan
+                        purna jual</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-12 sm:py-16 bg-amber-600 text-white">
+        <div class="container mx-auto px-4 sm:px-6 text-center">
+            <h2 class="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6">Siap Memulai Proyek Properti Anda?</h2>
+            <p class="text-lg sm:text-xl mb-6 sm:mb-8 max-w-2xl mx-auto">Konsultasikan ide dan kebutuhan properti Anda
+                dengan tim
+                profesional kami. Dapatkan solusi terbaik untuk investasi dan hunian impian.</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4">
+                <button
+                    class="bg-white text-amber-600 px-5 py-3 sm:px-6 sm:py-3 rounded-lg font-medium hover:bg-gray-100 transition text-sm sm:text-base">
+                    Hubungi Kami Sekarang
+                </button>
+                <button
+                    class="bg-transparent border-2 border-white text-white px-5 py-3 sm:px-6 sm:py-3 rounded-lg font-medium hover:bg-amber-700 transition text-sm sm:text-base">
+                    Lihat Portofolio
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-10 sm:py-12">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6 sm:gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <div
+                            class="w-8 h-8 sm:w-10 sm:h-10 bg-amber-600 rounded-lg flex items-center justify-center mr-2 sm:mr-3">
+                            <span class="text-white font-bold text-sm sm:text-lg">DA</span>
+                        </div>
+                        <h3 class="text-lg sm:text-xl font-bold">Dua Alam Project</h3>
+                    </div>
+                    <p class="text-gray-400 text-sm sm:text-base">Mitra terpercaya untuk mewujudkan hunian dan investasi
+                        properti bernilai
+                        tinggi.</p>
+                </div>
+
+                <div>
+                    <h4 class="text-base sm:text-lg font-semibold mb-3 sm:mb-4">Layanan</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm sm:text-base">
+                        <li><a href="#jual-beli" class="hover:text-white transition">Jual Beli Properti</a></li>
+                        <li><a href="#pembangunan" class="hover:text-white transition">Bangun & Renovasi</a></li>
+                        <li><a href="#konsultasi" class="hover:text-white transition">Konsultasi Properti</a></li>
+                        <li><a href="#" class="hover:text-white transition">Manajemen Properti</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-base sm:text-lg font-semibold mb-3 sm:mb-4">Perusahaan</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm sm:text-base">
+                        <li><a href="#" class="hover:text-white transition">Tentang Kami</a></li>
+                        <li><a href="#" class="hover:text-white transition">Tim Kami</a></li>
+                        <li><a href="#" class="hover:text-white transition">Proyek</a></li>
+                        <li><a href="#" class="hover:text-white transition">Blog</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-base sm:text-lg font-semibold mb-3 sm:mb-4">Hubungi Kami</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm sm:text-base">
+                        <li class="flex items-center">
+                            <i class="fas fa-map-marker-alt mr-2 sm:mr-3 text-amber-500"></i>
+                            <span>Jl. Properti No. 123, Jakarta</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone mr-2 sm:mr-3 text-amber-500"></i>
+                            <span>+62 21 1234 5678</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-2 sm:mr-3 text-amber-500"></i>
+                            <span>info@duaalamproject.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400 text-sm sm:text-base">
+                <p>&copy; 2023 Dua Alam Project. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Mobile Menu -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            mobileMenuButton.addEventListener('click', function () {
+                mobileMenu.classList.toggle('active');
+
+                // Change icon based on menu state
+                const icon = mobileMenuButton.querySelector('i');
+                if (mobileMenu.classList.contains('active')) {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-times');
+                } else {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+            });
+
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', function (event) {
+                if (!mobileMenuButton.contains(event.target) && !mobileMenu.contains(event.target)) {
+                    mobileMenu.classList.remove('active');
+                    const icon = mobileMenuButton.querySelector('i');
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

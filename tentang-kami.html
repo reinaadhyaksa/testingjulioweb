@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tentang Kami - Dua Alam Project</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .about-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .team-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .team-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        .value-card {
+            transition: all 0.3s ease;
+        }
+
+        .value-card:hover {
+            transform: translateY(-3px);
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .timeline-item:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.5rem;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #d97706;
+        }
+
+        .timeline-item:after {
+            content: '';
+            position: absolute;
+            left: 5px;
+            top: 1.5rem;
+            width: 2px;
+            height: calc(100% - 1rem);
+            background-color: #e5e7eb;
+        }
+
+        .timeline-item:last-child:after {
+            display: none;
+        }
+
+        /* Mobile menu styles */
+        .mobile-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background-color: white;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            z-index: 40;
+        }
+
+        .mobile-menu.active {
+            display: block;
+        }
+
+        .mobile-menu a {
+            display: block;
+            padding: 12px 20px;
+            border-bottom: 1px solid #f3f4f6;
+        }
+
+        .mobile-menu a:last-child {
+            border-bottom: none;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50">
+    <!-- Header & Navigation -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4 sm:px-6 py-3 sm:py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <a href="index.html" class="flex items-center">
+                        <div
+                            class="w-8 h-8 sm:w-10 sm:h-10 bg-amber-600 rounded-lg flex items-center justify-center mr-2 sm:mr-3">
+                            <span class="text-white font-bold text-sm sm:text-lg">DA</span>
+                        </div>
+                        <h1 class="text-lg sm:text-xl font-bold text-gray-800">Dua Alam Project</h1>
+                    </a>
+                </div>
+
+                <nav class="hidden md:flex space-x-6 lg:space-x-8">
+                    <a href="index.html" class="text-gray-600 hover:text-amber-600 transition text-base">Beranda</a>
+                    <a href="layanan.html" class="text-gray-600 hover:text-amber-600 transition text-base">Layanan</a>
+                    <a href="proyek.html" class="text-gray-600 hover:text-amber-600 transition text-base">Proyek</a>
+                    <a href="tentang-kami.html" class="text-amber-600 font-medium text-base">Tentang Kami</a>
+                    <a href="kontak.html" class="text-gray-600 hover:text-amber-600 transition text-base">Kontak</a>
+                </nav>
+
+                <button
+                    class="hidden sm:block bg-amber-600 text-white px-4 py-2 rounded-lg hover:bg-amber-700 transition text-sm sm:text-base">
+                    Konsultasi Gratis
+                </button>
+
+                <button id="mobile-menu-button" class="md:hidden text-gray-600">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="mobile-menu md:hidden">
+                <a href="index.html" class="text-gray-600 hover:text-amber-600 transition">Beranda</a>
+                <a href="layanan.html" class="text-gray-600 hover:text-amber-600 transition">Layanan</a>
+                <a href="proyek.html" class="text-gray-600 hover:text-amber-600 transition">Proyek</a>
+                <a href="tentang-kami.html" class="text-amber-600 font-medium">Tentang Kami</a>
+                <a href="kontak.html" class="text-gray-600 hover:text-amber-600 transition">Kontak</a>
+                <a href="#" class="bg-amber-600 text-white text-center py-3 font-medium hover:bg-amber-700 transition">
+                    Konsultasi Gratis
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="about-hero text-white py-16 md:py-20 lg:py-24">
+        <div class="container mx-auto px-4 sm:px-6 text-center">
+            <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6">Tentang Dua Alam Project
+            </h1>
+            <p class="text-base sm:text-lg md:text-xl max-w-3xl mx-auto">Menjadi mitra terpercaya dalam mewujudkan
+                hunian dan investasi properti
+                bernilai tinggi sejak 2008.</p>
+        </div>
+    </section>
+
+    <!-- Company Overview -->
+    <section class="py-12 sm:py-16 bg-white">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="flex flex-col lg:flex-row items-center gap-8 sm:gap-12">
+                <div class="lg:w-1/2">
+                    <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-4 sm:mb-6">Membangun Kepercayaan Selama
+                        15 Tahun</h2>
+                    <p class="text-gray-600 text-base sm:text-lg mb-4 sm:mb-6">
+                        Dua Alam Project didirikan pada tahun 2008 dengan visi untuk menjadi mitra terpercaya dalam
+                        setiap kebutuhan properti.
+                        Kami menyediakan layanan terpadu di bidang jual beli, pembangunan, dan renovasi properti dengan
+                        standar kualitas tertinggi.
+                    </p>
+                    <p class="text-gray-600 text-base sm:text-lg mb-6 sm:mb-8">
+                        Dengan tim berpengalaman dan jaringan luas, kami berkomitmen memberikan pelayanan yang
+                        transparan, efisien, dan elegan.
+                        Setiap proyek yang kami tangani adalah representasi dari dedikasi kami untuk mewujudkan properti
+                        impian klien dengan hasil yang berkelas dan bernilai tinggi.
+                    </p>
+
+                    <div class="grid grid-cols-2 gap-4 sm:gap-6">
+                        <div>
+                            <div class="text-xl sm:text-2xl font-bold text-amber-600 mb-2">15+</div>
+                            <div class="text-gray-600 text-sm sm:text-base">Tahun Pengalaman</div>
+                        </div>
+                        <div>
+                            <div class="text-xl sm:text-2xl font-bold text-amber-600 mb-2">200+</div>
+                            <div class="text-gray-600 text-sm sm:text-base">Proyek Diselesaikan</div>
+                        </div>
+                        <div>
+                            <div class="text-xl sm:text-2xl font-bold text-amber-600 mb-2">95%</div>
+                            <div class="text-gray-600 text-sm sm:text-base">Klien Puas</div>
+                        </div>
+                        <div>
+                            <div class="text-xl sm:text-2xl font-bold text-amber-600 mb-2">25+</div>
+                            <div class="text-gray-600 text-sm sm:text-base">Profesional Tim</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:w-1/2">
+                    <div class="bg-gray-100 rounded-xl p-4 sm:p-6">
+                        <img src="https://res.cloudinary.com/dc9q58yts/image/upload/f_auto,q_auto/v1760621834/homepage_yj03se.webp"
+                            alt="Tim Dua Alam Project" class="w-full h-56 sm:h-64 object-cover rounded-lg">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vision & Mission -->
+    <section class="py-12 sm:py-16 bg-amber-50">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="text-center mb-10 sm:mb-12">
+                <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-4">Visi & Misi Perusahaan</h2>
+                <p class="text-gray-600 text-base sm:text-lg max-w-2xl mx-auto">Landasan filosofi yang menjadi pedoman
+                    kami dalam memberikan
+                    layanan terbaik.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+                <div class="bg-white p-6 sm:p-8 rounded-xl shadow-sm">
+                    <div
+                        class="w-12 h-12 sm:w-16 sm:h-16 bg-amber-600 rounded-lg flex items-center justify-center mb-4 sm:mb-6">
+                        <i class="fas fa-bullseye text-white text-lg sm:text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl sm:text-2xl font-bold text-gray-800 mb-4">Visi Kami</h3>
+                    <p class="text-gray-600 text-base sm:text-lg mb-4">
+                        Menjadi mitra terpercaya dalam setiap kebutuhan properti dengan layanan profesional, inovatif,
+                        dan berorientasi pada kualitas.
+                    </p>
+                    <p class="text-gray-600 text-base sm:text-lg">
+                        Kami bercita-cita untuk menjadi perusahaan properti terdepan yang dikenal karena integritas,
+                        keahlian, dan komitmen
+                        terhadap kepuasan klien dalam setiap proyek yang kami tangani.
+                    </p>
+                </div>
+
+                <div class="bg-white p-6 sm:p-8 rounded-xl shadow-sm">
+                    <div
+                        class="w-12 h-12 sm:w-16 sm:h-16 bg-amber-600 rounded-lg flex items-center justify-center mb-4 sm:mb-6">
+                        <i class="fas fa-tasks text-white text-lg sm:text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl sm:text-2xl font-bold text-gray-800 mb-4">Misi Kami</h3>
+                    <ul class="space-y-3 sm:space-y-4 text-gray-600 text-base sm:text-lg">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-amber-600 mt-1 mr-3"></i>
+                            <span>Menyediakan solusi properti terintegrasi yang memenuhi kebutuhan dan ekspektasi
+                                klien</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-amber-600 mt-1 mr-3"></i>
+                            <span>Mengutamakan kualitas, ketepatan waktu, dan nilai tambah dalam setiap proyek</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-amber-600 mt-1 mr-3"></i>
+                            <span>Membangun hubungan jangka panjang berdasarkan kepercayaan dan transparansi</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-amber-600 mt-1 mr-3"></i>
+                            <span>Terus berinovasi dalam metode dan teknologi konstruksi untuk hasil terbaik</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Company Values -->
+    <section class="py-12 sm:py-16 bg-white">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="text-center mb-10 sm:mb-12">
+                <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-4">Nilai-Nilai Perusahaan</h2>
+                <p class="text-gray-600 text-base sm:text-lg max-w-2xl mx-auto">Prinsip-prinsip yang menjadi fondasi
+                    budaya kerja kami.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+                <div class="value-card bg-amber-50 p-4 sm:p-6 rounded-xl text-center">
+                    <div
+                        class="w-12 h-12 sm:w-16 sm:h-16 bg-amber-600 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                        <i class="fas fa-handshake text-white text-lg sm:text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-semibold text-gray-800 mb-2 sm:mb-3">Integritas</h3>
+                    <p class="text-gray-600 text-sm sm:text-base">Kami menjunjung tinggi kejujuran, transparansi, dan
+                        komitmen dalam setiap
+                        interaksi dengan klien dan mitra.</p>
+                </div>
+
+                <div class="value-card bg-amber-50 p-4 sm:p-6 rounded-xl text-center">
+                    <div
+                        class="w-12 h-12 sm:w-16 sm:h-16 bg-amber-600 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                        <i class="fas fa-award text-white text-lg sm:text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-semibold text-gray-800 mb-2 sm:mb-3">Kualitas</h3>
+                    <p class="text-gray-600 text-sm sm:text-base">Kami tidak pernah berkompromi dengan kualitas, dari
+                        material hingga
+                        pengerjaan, untuk hasil terbaik.</p>
+                </div>
+
+                <div class="value-card bg-amber-50 p-4 sm:p-6 rounded-xl text-center">
+                    <div
+                        class="w-12 h-12 sm:w-16 sm:h-16 bg-amber-600 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                        <i class="fas fa-lightbulb text-white text-lg sm:text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-semibold text-gray-800 mb-2 sm:mb-3">Inovasi</h3>
+                    <p class="text-gray-600 text-sm sm:text-base">Kami terus mengembangkan solusi kreatif dan teknologi
+                        terkini untuk
+                        memenuhi kebutuhan properti modern.</p>
+                </div>
+
+                <div class="value-card bg-amber-50 p-4 sm:p-6 rounded-xl text-center">
+                    <div
+                        class="w-12 h-12 sm:w-16 sm:h-16 bg-amber-600 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                        <i class="fas fa-users text-white text-lg sm:text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-semibold text-gray-800 mb-2 sm:mb-3">Kolaborasi</h3>
+                    <p class="text-gray-600 text-sm sm:text-base">Kami bekerja sama dengan klien sebagai mitra untuk
+                        mewujudkan visi mereka
+                        menjadi kenyataan.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Team -->
+    <section class="py-12 sm:py-16 bg-gray-50">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="text-center mb-10 sm:mb-12">
+                <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-4">Tim Profesional Kami</h2>
+                <p class="text-gray-600 text-base sm:text-lg max-w-2xl mx-auto">Dikenang karena karyanya, dipercaya
+                    karena integritasnya.
+                    Temui para ahli di balik kesuksesan Dua Alam Project.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+                <div class="team-card bg-white rounded-xl shadow-md overflow-hidden text-center">
+                    <div class="h-48 sm:h-64 bg-gray-300">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
+                            alt="Direktur Utama" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-4 sm:p-6">
+                        <h3 class="text-lg sm:text-xl font-semibold text-gray-800 mb-1">Budi Santoso</h3>
+                        <p class="text-amber-600 font-medium text-sm sm:text-base mb-2 sm:mb-3">Direktur Utama</p>
+                        <p class="text-gray-600 text-xs sm:text-sm mb-3 sm:mb-4">Memimpin perusahaan dengan visi
+                            strategis dan pengalaman
+                            20 tahun di industri properti.</p>
+                        <div class="flex justify-center space-x-2 sm:space-x-3">
+                            <a href="#" class="text-gray-400 hover:text-amber-600 transition">
+                                <i class="fab fa-linkedin-in text-sm sm:text-base"></i>
+                            </a>
+                            <a href="#" class="text-gray-400 hover:text-amber-600 transition">
+                                <i class="fab fa-twitter text-sm sm:text-base"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team-card bg-white rounded-xl shadow-md overflow-hidden text-center">
+                    <div class="h-48 sm:h-64 bg-gray-300">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=688&q=80"
+                            alt="Manajer Konstruksi" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-4 sm:p-6">
+                        <h3 class="text-lg sm:text-xl font-semibold text-gray-800 mb-1">Sari Dewi</h3>
+                        <p class="text-amber-600 font-medium text-sm sm:text-base mb-2 sm:mb-3">Manajer Konstruksi</p>
+                        <p class="text-gray-600 text-xs sm:text-sm mb-3 sm:mb-4">Mengawasi semua proyek konstruksi
+                            dengan standar kualitas
+                            dan keselamatan tertinggi.</p>
+                        <div class="flex justify-center space-x-2 sm:space-x-3">
+                            <a href="#" class="text-gray-400 hover:text-amber-600 transition">
+                                <i class="fab fa-linkedin-in text-sm sm:text-base"></i>
+                            </a>
+                            <a href="#" class="text-gray-400 hover:text-amber-600 transition">
+                                <i class="fab fa-twitter text-sm sm:text-base"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team-card bg-white rounded-xl shadow-md overflow-hidden text-center">
+                    <div class="h-48 sm:h-64 bg-gray-300">
+                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=761&q=80"
+                            alt="Arsitek Head" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-4 sm:p-6">
+                        <h3 class="text-lg sm:text-xl font-semibold text-gray-800 mb-1">Rina Wijaya</h3>
+                        <p class="text-amber-600 font-medium text-sm sm:text-base mb-2 sm:mb-3">Kepala Arsitek</p>
+                        <p class="text-gray-600 text-xs sm:text-sm mb-3 sm:mb-4">Menciptakan desain inovatif yang
+                            menggabungkan estetika,
+                            fungsi, dan keberlanjutan.</p>
+                        <div class="flex justify-center space-x-2 sm:space-x-3">
+                            <a href="#" class="text-gray-400 hover:text-amber-600 transition">
+                                <i class="fab fa-linkedin-in text-sm sm:text-base"></i>
+                            </a>
+                            <a href="#" class="text-gray-400 hover:text-amber-600 transition">
+                                <i class="fab fa-twitter text-sm sm:text-base"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team-card bg-white rounded-xl shadow-md overflow-hidden text-center">
+                    <div class="h-48 sm:h-64 bg-gray-300">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+                            alt="Manajer Pemasaran" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-4 sm:p-6">
+                        <h3 class="text-lg sm:text-xl font-semibold text-gray-800 mb-1">Ahmad Fauzi</h3>
+                        <p class="text-amber-600 font-medium text-sm sm:text-base mb-2 sm:mb-3">Manajer Pemasaran</p>
+                        <p class="text-gray-600 text-xs sm:text-sm mb-3 sm:mb-4">Mengembangkan strategi pemasaran untuk
+                            menghubungkan
+                            properti kami dengan calon pembeli tepat.</p>
+                        <div class="flex justify-center space-x-2 sm:space-x-3">
+                            <a href="#" class="text-gray-400 hover:text-amber-600 transition">
+                                <i class="fab fa-linkedin-in text-sm sm:text-base"></i>
+                            </a>
+                            <a href="#" class="text-gray-400 hover:text-amber-600 transition">
+                                <i class="fab fa-twitter text-sm sm:text-base"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Company Timeline -->
+    <section class="py-12 sm:py-16 bg-white">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="text-center mb-10 sm:mb-12">
+                <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-4">Perjalanan Kami</h2>
+                <p class="text-gray-600 text-base sm:text-lg max-w-2xl mx-auto">Cerita perkembangan Dua Alam Project
+                    dari awal berdiri hingga
+                    menjadi perusahaan properti terpercaya.</p>
+            </div>
+
+            <div class="max-w-3xl mx-auto">
+                <div class="space-y-6 sm:space-y-8">
+                    <div class="timeline-item">
+                        <div class="bg-amber-50 p-4 sm:p-6 rounded-xl">
+                            <div class="text-amber-600 font-semibold text-sm sm:text-base mb-2">2008</div>
+                            <h3 class="text-lg sm:text-xl font-semibold text-gray-800 mb-2">Pendirian Perusahaan</h3>
+                            <p class="text-gray-600 text-sm sm:text-base">Dua Alam Project didirikan dengan fokus pada
+                                jasa pembangunan dan
+                                renovasi rumah tinggal.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="bg-amber-50 p-4 sm:p-6 rounded-xl">
+                            <div class="text-amber-600 font-semibold text-sm sm:text-base mb-2">2012</div>
+                            <h3 class="text-lg sm:text-xl font-semibold text-gray-800 mb-2">Ekspansi Layanan</h3>
+                            <p class="text-gray-600 text-sm sm:text-base">Memperluas layanan ke jual beli properti dan
+                                konsultasi investasi
+                                properti.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="bg-amber-50 p-4 sm:p-6 rounded-xl">
+                            <div class="text-amber-600 font-semibold text-sm sm:text-base mb-2">2015</div>
+                            <h3 class="text-lg sm:text-xl font-semibold text-gray-800 mb-2">Proyek Komersial Pertama
+                            </h3>
+                            <p class="text-gray-600 text-sm sm:text-base">Menyelesaikan proyek komersial pertama berupa
+                                pembangunan ruko di
+                                kawasan BSD City.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="bg-amber-50 p-4 sm:p-6 rounded-xl">
+                            <div class="text-amber-600 font-semibold text-sm sm:text-base mb-2">2018</div>
+                            <h3 class="text-lg sm:text-xl font-semibold text-gray-800 mb-2">Penghargaan Pertama</h3>
+                            <p class="text-gray-600 text-sm sm:text-base">Mendapatkan penghargaan "Best Property
+                                Consultant" dari Asosiasi
+                                Real Estate Indonesia.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="bg-amber-50 p-4 sm:p-6 rounded-xl">
+                            <div class="text-amber-600 font-semibold text-sm sm:text-base mb-2">2023</div>
+                            <h3 class="text-lg sm:text-xl font-semibold text-gray-800 mb-2">Ekspansi Digital</h3>
+                            <p class="text-gray-600 text-sm sm:text-base">Meluncurkan platform digital untuk memudahkan
+                                klien mengakses
+                                layanan properti secara online.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-12 sm:py-16 bg-amber-600 text-white">
+        <div class="container mx-auto px-4 sm:px-6 text-center">
+            <h2 class="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6">Tertarik Bekerja Sama Dengan Kami?</h2>
+            <p class="text-lg sm:text-xl mb-6 sm:mb-8 max-w-2xl mx-auto">Mari wujudkan properti impian Anda bersama tim
+                profesional Dua
+                Alam Project. Konsultasikan kebutuhan Anda sekarang.</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4">
+                <button
+                    class="bg-white text-amber-600 px-5 py-3 sm:px-6 sm:py-3 rounded-lg font-medium hover:bg-gray-100 transition text-sm sm:text-base">
+                    Hubungi Kami
+                </button>
+                <button
+                    class="bg-transparent border-2 border-white text-white px-5 py-3 sm:px-6 sm:py-3 rounded-lg font-medium hover:bg-amber-700 transition text-sm sm:text-base">
+                    Lihat Portofolio
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-10 sm:py-12">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6 sm:gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <div
+                            class="w-8 h-8 sm:w-10 sm:h-10 bg-amber-600 rounded-lg flex items-center justify-center mr-2 sm:mr-3">
+                            <span class="text-white font-bold text-sm sm:text-lg">DA</span>
+                        </div>
+                        <h3 class="text-lg sm:text-xl font-bold">Dua Alam Project</h3>
+                    </div>
+                    <p class="text-gray-400 text-sm sm:text-base">Mitra terpercaya untuk mewujudkan hunian dan investasi
+                        properti bernilai
+                        tinggi.</p>
+                </div>
+
+                <div>
+                    <h4 class="text-base sm:text-lg font-semibold mb-3 sm:mb-4">Layanan</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm sm:text-base">
+                        <li><a href="layanan.html#jual-beli" class="hover:text-white transition">Jual Beli Properti</a>
+                        </li>
+                        <li><a href="layanan.html#pembangunan" class="hover:text-white transition">Bangun & Renovasi</a>
+                        </li>
+                        <li><a href="layanan.html#konsultasi" class="hover:text-white transition">Konsultasi
+                                Properti</a></li>
+                        <li><a href="#" class="hover:text-white transition">Manajemen Properti</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-base sm:text-lg font-semibold mb-3 sm:mb-4">Perusahaan</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm sm:text-base">
+                        <li><a href="#" class="hover:text-white transition">Tentang Kami</a></li>
+                        <li><a href="#" class="hover:text-white transition">Tim Kami</a></li>
+                        <li><a href="proyek.html" class="hover:text-white transition">Proyek</a></li>
+                        <li><a href="#" class="hover:text-white transition">Blog</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-base sm:text-lg font-semibold mb-3 sm:mb-4">Hubungi Kami</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm sm:text-base">
+                        <li class="flex items-center">
+                            <i class="fas fa-map-marker-alt mr-2 sm:mr-3 text-amber-500"></i>
+                            <span>Jl. Properti No. 123, Jakarta</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone mr-2 sm:mr-3 text-amber-500"></i>
+                            <span>+62 21 1234 5678</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-2 sm:mr-3 text-amber-500"></i>
+                            <span>info@duaalamproject.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400 text-sm sm:text-base">
+                <p>&copy; 2023 Dua Alam Project. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Mobile Menu -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            mobileMenuButton.addEventListener('click', function () {
+                mobileMenu.classList.toggle('active');
+
+                // Change icon based on menu state
+                const icon = mobileMenuButton.querySelector('i');
+                if (mobileMenu.classList.contains('active')) {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-times');
+                } else {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+            });
+
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', function (event) {
+                if (!mobileMenuButton.contains(event.target) && !mobileMenu.contains(event.target)) {
+                    mobileMenu.classList.remove('active');
+                    const icon = mobileMenuButton.querySelector('i');
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

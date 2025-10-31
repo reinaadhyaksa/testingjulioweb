@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyek - Dua Alam Project</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .project-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .project-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        .filter-btn.active {
+            background-color: #d97706;
+            color: white;
+        }
+
+        /* Mobile menu styles */
+        .mobile-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background-color: white;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            z-index: 40;
+        }
+
+        .mobile-menu.active {
+            display: block;
+        }
+
+        .mobile-menu a {
+            display: block;
+            padding: 12px 20px;
+            border-bottom: 1px solid #f3f4f6;
+        }
+
+        .mobile-menu a:last-child {
+            border-bottom: none;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50">
+    <!-- Header & Navigation -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4 sm:px-6 py-3 sm:py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <a href="index.html" class="flex items-center">
+                        <div
+                            class="w-8 h-8 sm:w-10 sm:h-10 bg-amber-600 rounded-lg flex items-center justify-center mr-2 sm:mr-3">
+                            <span class="text-white font-bold text-sm sm:text-lg">DA</span>
+                        </div>
+                        <h1 class="text-lg sm:text-xl font-bold text-gray-800">Dua Alam Project</h1>
+                    </a>
+                </div>
+
+                <nav class="hidden md:flex space-x-6 lg:space-x-8">
+                    <a href="index.html" class="text-gray-600 hover:text-amber-600 transition text-base">Beranda</a>
+                    <a href="layanan.html" class="text-gray-600 hover:text-amber-600 transition text-base">Layanan</a>
+                    <a href="proyek.html" class="text-amber-600 font-medium text-base">Proyek</a>
+                    <a href="tentang-kami.html" class="text-gray-600 hover:text-amber-600 transition text-base">Tentang
+                        Kami</a>
+                    <a href="kontak.html" class="text-gray-600 hover:text-amber-600 transition text-base">Kontak</a>
+                </nav>
+
+                <button
+                    class="hidden sm:block bg-amber-600 text-white px-4 py-2 rounded-lg hover:bg-amber-700 transition text-sm sm:text-base">
+                    Konsultasi Gratis
+                </button>
+
+                <button id="mobile-menu-button" class="md:hidden text-gray-600">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="mobile-menu md:hidden">
+                <a href="index.html" class="text-gray-600 hover:text-amber-600 transition">Beranda</a>
+                <a href="layanan.html" class="text-gray-600 hover:text-amber-600 transition">Layanan</a>
+                <a href="proyek.html" class="text-amber-600 font-medium">Proyek</a>
+                <a href="tentang-kami.html" class="text-gray-600 hover:text-amber-600 transition">Tentang Kami</a>
+                <a href="kontak.html" class="text-gray-600 hover:text-amber-600 transition">Kontak</a>
+                <a href="#" class="bg-amber-600 text-white text-center py-3 font-medium hover:bg-amber-700 transition">
+                    Konsultasi Gratis
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="project-hero text-white py-16 md:py-20 lg:py-24">
+        <div class="container mx-auto px-4 sm:px-6 text-center">
+            <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6">Portofolio Proyek Kami</h1>
+            <p class="text-base sm:text-lg md:text-xl max-w-3xl mx-auto">Jelajahi berbagai proyek properti yang telah
+                kami selesaikan dengan
+                standar kualitas tertinggi dan kepuasan klien.</p>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-10 sm:py-12 bg-white">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 text-center">
+                <div>
+                    <div class="text-2xl sm:text-3xl md:text-4xl font-bold text-amber-600 mb-2">50+</div>
+                    <div class="text-gray-600 text-sm sm:text-base">Proyek Selesai</div>
+                </div>
+                <div>
+                    <div class="text-2xl sm:text-3xl md:text-4xl font-bold text-amber-600 mb-2">25+</div>
+                    <div class="text-gray-600 text-sm sm:text-base">Klien Puas</div>
+                </div>
+                <div>
+                    <div class="text-2xl sm:text-3xl md:text-4xl font-bold text-amber-600 mb-2">15</div>
+                    <div class="text-gray-600 text-sm sm:text-base">Tahun Pengalaman</div>
+                </div>
+                <div>
+                    <div class="text-2xl sm:text-3xl md:text-4xl font-bold text-amber-600 mb-2">12</div>
+                    <div class="text-gray-600 text-sm sm:text-base">Penghargaan</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Filter -->
+    <section class="py-6 sm:py-8 bg-gray-50">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="flex flex-wrap justify-center gap-3 sm:gap-4">
+                <button
+                    class="filter-btn active px-3 py-2 sm:px-4 sm:py-2 bg-amber-600 text-white rounded-lg transition text-sm sm:text-base"
+                    data-filter="all">
+                    Semua Proyek
+                </button>
+                <button
+                    class="filter-btn px-3 py-2 sm:px-4 sm:py-2 bg-white text-gray-700 rounded-lg border border-gray-300 hover:bg-gray-100 transition text-sm sm:text-base"
+                    data-filter="rumah">
+                    Rumah
+                </button>
+                <button
+                    class="filter-btn px-3 py-2 sm:px-4 sm:py-2 bg-white text-gray-700 rounded-lg border border-gray-300 hover:bg-gray-100 transition text-sm sm:text-base"
+                    data-filter="ruko">
+                    Ruko
+                </button>
+                <button
+                    class="filter-btn px-3 py-2 sm:px-4 sm:py-2 bg-white text-gray-700 rounded-lg border border-gray-300 hover:bg-gray-100 transition text-sm sm:text-base"
+                    data-filter="renovasi">
+                    Renovasi
+                </button>
+                <button
+                    class="filter-btn px-3 py-2 sm:px-4 sm:py-2 bg-white text-gray-700 rounded-lg border border-gray-300 hover:bg-gray-100 transition text-sm sm:text-base"
+                    data-filter="komersial">
+                    Komersial
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Grid -->
+    <section class="py-12 sm:py-16 bg-white">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+                <!-- Project 1 -->
+                <div class="project-card bg-white rounded-xl shadow-md overflow-hidden" data-category="rumah">
+                    <div class="h-48 sm:h-56 bg-gray-300 relative">
+                        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1153&q=80"
+                            alt="Rumah Modern Minimalis" class="w-full h-full object-cover">
+                        <div
+                            class="absolute top-3 right-3 sm:top-4 sm:right-4 bg-amber-600 text-white px-2 py-1 sm:px-3 sm:py-1 rounded-full text-xs sm:text-sm">
+                            Rumah
+                        </div>
+                    </div>
+                    <div class="p-4 sm:p-6">
+                        <h3 class="text-lg sm:text-xl font-semibold text-gray-800 mb-2">Rumah Modern Minimalis</h3>
+                        <p class="text-gray-600 text-sm sm:text-base mb-3 sm:mb-4">Desain rumah minimalis dengan konsep
+                            terbuka dan pencahayaan alami
+                            maksimal di area Bintaro, Tangerang.</p>
+                        <div class="flex justify-between items-center text-xs sm:text-sm text-gray-500">
+                            <span><i class="fas fa-map-marker-alt mr-1"></i> Bintaro, Tangerang</span>
+                            <span><i class="fas fa-calendar mr-1"></i> 2023</span>
+                        </div>
+                        <button
+                            class="w-full mt-3 sm:mt-4 bg-amber-600 text-white py-2 rounded-lg hover:bg-amber-700 transition text-sm sm:text-base">
+                            Lihat Detail
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card bg-white rounded-xl shadow-md overflow-hidden" data-category="ruko">
+                    <div class="h-48 sm:h-56 bg-gray-300 relative">
+                        <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1073&q=80"
+                            alt="Ruko 2 Lantai" class="w-full h-full object-cover">
+                        <div
+                            class="absolute top-3 right-3 sm:top-4 sm:right-4 bg-amber-600 text-white px-2 py-1 sm:px-3 sm:py-1 rounded-full text-xs sm:text-sm">
+                            Ruko
+                        </div>
+                    </div>
+                    <div class="p-4 sm:p-6">
+                        <h3 class="text-lg sm:text-xl font-semibold text-gray-800 mb-2">Ruko 2 Lantai BSD City</h3>
+                        <p class="text-gray-600 text-sm sm:text-base mb-3 sm:mb-4">Pembangunan ruko dengan desain modern
+                            dan fasilitas lengkap di
+                            kawasan komersial BSD City, Tangerang Selatan.</p>
+                        <div class="flex justify-between items-center text-xs sm:text-sm text-gray-500">
+                            <span><i class="fas fa-map-marker-alt mr-1"></i> BSD City, Tangerang</span>
+                            <span><i class="fas fa-calendar mr-1"></i> 2022</span>
+                        </div>
+                        <button
+                            class="w-full mt-3 sm:mt-4 bg-amber-600 text-white py-2 rounded-lg hover:bg-amber-700 transition text-sm sm:text-base">
+                            Lihat Detail
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card bg-white rounded-xl shadow-md overflow-hidden" data-category="renovasi">
+                    <div class="h-48 sm:h-56 bg-gray-300 relative">
+                        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=958&q=80"
+                            alt="Renovasi Total Rumah" class="w-full h-full object-cover">
+                        <div
+                            class="absolute top-3 right-3 sm:top-4 sm:right-4 bg-amber-600 text-white px-2 py-1 sm:px-3 sm:py-1 rounded-full text-xs sm:text-sm">
+                            Renovasi
+                        </div>
+                    </div>
+                    <div class="p-4 sm:p-6">
+                        <h3 class="text-lg sm:text-xl font-semibold text-gray-800 mb-2">Renovasi Total Rumah Kuno</h3>
+                        <p class="text-gray-600 text-sm sm:text-base mb-3 sm:mb-4">Transformasi rumah kuno tahun 80-an
+                            menjadi hunian modern dengan
+                            tetap mempertahankan elemen klasiknya di Menteng, Jakarta.</p>
+                        <div class="flex justify-between items-center text-xs sm:text-sm text-gray-500">
+                            <span><i class="fas fa-map-marker-alt mr-1"></i> Menteng, Jakarta</span>
+                            <span><i class="fas fa-calendar mr-1"></i> 2023</span>
+                        </div>
+                        <button
+                            class="w-full mt-3 sm:mt-4 bg-amber-600 text-white py-2 rounded-lg hover:bg-amber-700 transition text-sm sm:text-base">
+                            Lihat Detail
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="project-card bg-white rounded-xl shadow-md overflow-hidden" data-category="komersial">
+                    <div class="h-48 sm:h-56 bg-gray-300 relative">
+                        <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1169&q=80"
+                            alt="Kantor Modern" class="w-full h-full object-cover">
+                        <div
+                            class="absolute top-3 right-3 sm:top-4 sm:right-4 bg-amber-600 text-white px-2 py-1 sm:px-3 sm:py-1 rounded-full text-xs sm:text-sm">
+                            Komersial
+                        </div>
+                    </div>
+                    <div class="p-4 sm:p-6">
+                        <h3 class="text-lg sm:text-xl font-semibold text-gray-800 mb-2">Kantor Modern SCBD</h3>
+                        <p class="text-gray-600 text-sm sm:text-base mb-3 sm:mb-4">Desain dan pembangunan interior
+                            kantor perusahaan teknologi di
+                            kawasan SCBD dengan konsep open space dan collaborative areas.</p>
+                        <div class="flex justify-between items-center text-xs sm:text-sm text-gray-500">
+                            <span><i class="fas fa-map-marker-alt mr-1"></i> SCBD, Jakarta</span>
+                            <span><i class="fas fa-calendar mr-1"></i> 2022</span>
+                        </div>
+                        <button
+                            class="w-full mt-3 sm:mt-4 bg-amber-600 text-white py-2 rounded-lg hover:bg-amber-700 transition text-sm sm:text-base">
+                            Lihat Detail
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="project-card bg-white rounded-xl shadow-md overflow-hidden" data-category="rumah">
+                    <div class="h-48 sm:h-56 bg-gray-300 relative">
+                        <img src="https://images.unsplash.com/photo-1605146769289-440113cc3d00?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+                            alt="Villa Alam Sutera" class="w-full h-full object-cover">
+                        <div
+                            class="absolute top-3 right-3 sm:top-4 sm:right-4 bg-amber-600 text-white px-2 py-1 sm:px-3 sm:py-1 rounded-full text-xs sm:text-sm">
+                            Rumah
+                        </div>
+                    </div>
+                    <div class="p-4 sm:p-6">
+                        <h3 class="text-lg sm:text-xl font-semibold text-gray-800 mb-2">Villa Mewah Alam Sutera</h3>
+                        <p class="text-gray-600 text-sm sm:text-base mb-3 sm:mb-4">Pembangunan villa mewah dengan kolam
+                            renang pribadi dan taman
+                            landscape yang luas di kawasan Alam Sutera, Tangerang.</p>
+                        <div class="flex justify-between items-center text-xs sm:text-sm text-gray-500">
+                            <span><i class="fas fa-map-marker-alt mr-1"></i> Alam Sutera, Tangerang</span>
+                            <span><i class="fas fa-calendar mr-1"></i> 2021</span>
+                        </div>
+                        <button
+                            class="w-full mt-3 sm:mt-4 bg-amber-600 text-white py-2 rounded-lg hover:bg-amber-700 transition text-sm sm:text-base">
+                            Lihat Detail
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project 6 -->
+                <div class="project-card bg-white rounded-xl shadow-md overflow-hidden" data-category="renovasi">
+                    <div class="h-48 sm:h-56 bg-gray-300 relative">
+                        <img src="https://images.unsplash.com/photo-1600607687644-c7171b42498b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+                            alt="Apartemen Kemang" class="w-full h-full object-cover">
+                        <div
+                            class="absolute top-3 right-3 sm:top-4 sm:right-4 bg-amber-600 text-white px-2 py-1 sm:px-3 sm:py-1 rounded-full text-xs sm:text-sm">
+                            Renovasi
+                        </div>
+                    </div>
+                    <div class="p-4 sm:p-6">
+                        <h3 class="text-lg sm:text-xl font-semibold text-gray-800 mb-2">Renovasi Apartemen Kemang</h3>
+                        <p class="text-gray-600 text-sm sm:text-base mb-3 sm:mb-4">Modernisasi unit apartemen di kawasan
+                            Kemang dengan konsep
+                            industrial loft dan optimasi ruang terbatas.</p>
+                        <div class="flex justify-between items-center text-xs sm:text-sm text-gray-500">
+                            <span><i class="fas fa-map-marker-alt mr-1"></i> Kemang, Jakarta</span>
+                            <span><i class="fas fa-calendar mr-1"></i> 2023</span>
+                        </div>
+                        <button
+                            class="w-full mt-3 sm:mt-4 bg-amber-600 text-white py-2 rounded-lg hover:bg-amber-700 transition text-sm sm:text-base">
+                            Lihat Detail
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Load More Button -->
+            <div class="text-center mt-10 sm:mt-12">
+                <button
+                    class="bg-white text-amber-600 border border-amber-600 px-5 py-3 sm:px-6 sm:py-3 rounded-lg font-medium hover:bg-amber-50 transition text-sm sm:text-base">
+                    Muat Lebih Banyak Proyek
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-12 sm:py-16 bg-gray-50">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="text-center mb-10 sm:mb-12">
+                <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-4">Apa Kata Klien Kami</h2>
+                <p class="text-gray-600 text-base sm:text-lg max-w-2xl mx-auto">Dengarkan pengalaman langsung dari klien
+                    yang telah
+                    mempercayakan proyek properti mereka kepada kami.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+                <div class="bg-white p-5 sm:p-6 rounded-xl shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <div
+                            class="w-10 h-10 sm:w-12 sm:h-12 bg-amber-100 rounded-full flex items-center justify-center mr-3 sm:mr-4">
+                            <i class="fas fa-user text-amber-600"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-800 text-sm sm:text-base">Bapak Andi Wijaya</h4>
+                            <p class="text-gray-500 text-xs sm:text-sm">Proyek Rumah Modern Minimalis</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 text-sm sm:text-base italic">"Hasil renovasi rumah saya melebihi ekspektasi.
+                        Tim Dua Alam Project
+                        sangat profesional dan detail-oriented. Proses pengerjaan tepat waktu dan komunikasi sangat
+                        baik."</p>
+                    <div class="flex text-amber-500 mt-3 sm:mt-4">
+                        <i class="fas fa-star text-xs sm:text-sm"></i>
+                        <i class="fas fa-star text-xs sm:text-sm"></i>
+                        <i class="fas fa-star text-xs sm:text-sm"></i>
+                        <i class="fas fa-star text-xs sm:text-sm"></i>
+                        <i class="fas fa-star text-xs sm:text-sm"></i>
+                    </div>
+                </div>
+
+                <div class="bg-white p-5 sm:p-6 rounded-xl shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <div
+                            class="w-10 h-10 sm:w-12 sm:h-12 bg-amber-100 rounded-full flex items-center justify-center mr-3 sm:mr-4">
+                            <i class="fas fa-user text-amber-600"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-800 text-sm sm:text-base">Ibu Sari Dewi</h4>
+                            <p class="text-gray-500 text-xs sm:text-sm">Proyek Ruko BSD City</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 text-sm sm:text-base italic">"Sangat puas dengan pembangunan ruko saya.
+                        Hasilnya elegan dan
+                        fungsional. Proses dari perencanaan hingga eksekusi sangat transparan dan terorganisir dengan
+                        baik."</p>
+                    <div class="flex text-amber-500 mt-3 sm:mt-4">
+                        <i class="fas fa-star text-xs sm:text-sm"></i>
+                        <i class="fas fa-star text-xs sm:text-sm"></i>
+                        <i class="fas fa-star text-xs sm:text-sm"></i>
+                        <i class="fas fa-star text-xs sm:text-sm"></i>
+                        <i class="fas fa-star text-xs sm:text-sm"></i>
+                    </div>
+                </div>
+
+                <div class="bg-white p-5 sm:p-6 rounded-xl shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <div
+                            class="w-10 h-10 sm:w-12 sm:h-12 bg-amber-100 rounded-full flex items-center justify-center mr-3 sm:mr-4">
+                            <i class="fas fa-user text-amber-600"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-800 text-sm sm:text-base">Bapak Rudi Hartono</h4>
+                            <p class="text-gray-500 text-xs sm:text-sm">Proyek Kantor SCBD</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 text-sm sm:text-base italic">"Tim Dua Alam Project berhasil mewujudkan
+                        kantor impian kami.
+                        Desainnya modern dan ergonomis, meningkatkan produktivitas karyawan. Pelayanan purna jual juga
+                        sangat baik."</p>
+                    <div class="flex text-amber-500 mt-3 sm:mt-4">
+                        <i class="fas fa-star text-xs sm:text-sm"></i>
+                        <i class="fas fa-star text-xs sm:text-sm"></i>
+                        <i class="fas fa-star text-xs sm:text-sm"></i>
+                        <i class="fas fa-star text-xs sm:text-sm"></i>
+                        <i class="fas fa-star text-xs sm:text-sm"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-12 sm:py-16 bg-amber-600 text-white">
+        <div class="container mx-auto px-4 sm:px-6 text-center">
+            <h2 class="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6">Tertarik Dengan Karya Kami?</h2>
+            <p class="text-lg sm:text-xl mb-6 sm:mb-8 max-w-2xl mx-auto">Mari diskusikan proyek properti impian Anda
+                bersama tim
+                profesional kami. Jadikan visi Anda menjadi kenyataan.</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4">
+                <button
+                    class="bg-white text-amber-600 px-5 py-3 sm:px-6 sm:py-3 rounded-lg font-medium hover:bg-gray-100 transition text-sm sm:text-base">
+                    Konsultasi Proyek Anda
+                </button>
+                <button
+                    class="bg-transparent border-2 border-white text-white px-5 py-3 sm:px-6 sm:py-3 rounded-lg font-medium hover:bg-amber-700 transition text-sm sm:text-base">
+                    Lihat Semua Proyek
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-10 sm:py-12">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6 sm:gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <div
+                            class="w-8 h-8 sm:w-10 sm:h-10 bg-amber-600 rounded-lg flex items-center justify-center mr-2 sm:mr-3">
+                            <span class="text-white font-bold text-sm sm:text-lg">DA</span>
+                        </div>
+                        <h3 class="text-lg sm:text-xl font-bold">Dua Alam Project</h3>
+                    </div>
+                    <p class="text-gray-400 text-sm sm:text-base">Mitra terpercaya untuk mewujudkan hunian dan investasi
+                        properti bernilai
+                        tinggi.</p>
+                </div>
+
+                <div>
+                    <h4 class="text-base sm:text-lg font-semibold mb-3 sm:mb-4">Layanan</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm sm:text-base">
+                        <li><a href="layanan.html#jual-beli" class="hover:text-white transition">Jual Beli Properti</a>
+                        </li>
+                        <li><a href="layanan.html#pembangunan" class="hover:text-white transition">Bangun & Renovasi</a>
+                        </li>
+                        <li><a href="layanan.html#konsultasi" class="hover:text-white transition">Konsultasi
+                                Properti</a></li>
+                        <li><a href="#" class="hover:text-white transition">Manajemen Properti</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-base sm:text-lg font-semibold mb-3 sm:mb-4">Perusahaan</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm sm:text-base">
+                        <li><a href="#" class="hover:text-white transition">Tentang Kami</a></li>
+                        <li><a href="#" class="hover:text-white transition">Tim Kami</a></li>
+                        <li><a href="#" class="hover:text-white transition">Proyek</a></li>
+                        <li><a href="#" class="hover:text-white transition">Blog</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-base sm:text-lg font-semibold mb-3 sm:mb-4">Hubungi Kami</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm sm:text-base">
+                        <li class="flex items-center">
+                            <i class="fas fa-map-marker-alt mr-2 sm:mr-3 text-amber-500"></i>
+                            <span>Jl. Properti No. 123, Jakarta</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone mr-2 sm:mr-3 text-amber-500"></i>
+                            <span>+62 21 1234 5678</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-2 sm:mr-3 text-amber-500"></i>
+                            <span>info@duaalamproject.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400 text-sm sm:text-base">
+                <p>&copy; 2023 Dua Alam Project. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Filter functionality
+        document.addEventListener('DOMContentLoaded', function () {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const projectCards = document.querySelectorAll('.project-card');
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function () {
+                    // Remove active class from all buttons
+                    filterButtons.forEach(btn => btn.classList.remove('active', 'bg-amber-600', 'text-white'));
+                    filterButtons.forEach(btn => btn.classList.add('bg-white', 'text-gray-700', 'border'));
+
+                    // Add active class to clicked button
+                    this.classList.remove('bg-white', 'text-gray-700', 'border');
+                    this.classList.add('active', 'bg-amber-600', 'text-white');
+
+                    const filterValue = this.getAttribute('data-filter');
+
+                    projectCards.forEach(card => {
+                        if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+
+            // Mobile menu functionality
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            mobileMenuButton.addEventListener('click', function () {
+                mobileMenu.classList.toggle('active');
+
+                // Change icon based on menu state
+                const icon = mobileMenuButton.querySelector('i');
+                if (mobileMenu.classList.contains('active')) {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-times');
+                } else {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+            });
+
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', function (event) {
+                if (!mobileMenuButton.contains(event.target) && !mobileMenu.contains(event.target)) {
+                    mobileMenu.classList.remove('active');
+                    const icon = mobileMenuButton.querySelector('i');
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
